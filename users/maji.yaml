@@ -1,9 +1,9 @@
-# 松林さん設定（叩き台）
-# Slack User ID・カレンダーID・DriveフォルダIDは実際の値に置換してください
+# 間地さん設定
+# review_recipientsはデモ期間中は空でOK（自分でモニタするので）
 
-name: 松林 [姓]
-slack_user_id: U_MATSUBAYASHI  # ←実IDに置換
-email: matsubayashi@streetsmart.co.jp  # ←実メアドに置換
+name: 間地 真司
+slack_user_id: U03HXF9ER
+email: maji@misky.co.jp
 
 timezone: Asia/Tokyo
 language: ja
@@ -12,7 +12,6 @@ schedule:
   daily_report: "22:00"
   meeting_prep: "08:00"
 
-# 松林さん明示要望のカテゴリ順
 categories:
   - name: 戦略
     emoji: "🎯"
@@ -32,7 +31,7 @@ categories:
 
 data_sources:
   google_calendar:
-    calendar_id: matsubayashi@streetsmart.co.jp  # ←要確認
+    calendar_id: maji@misky.co.jp  # ←要確認（別カレンダーIDがあれば置換）
     only_accepted: true
 
   google_drive:
@@ -45,14 +44,11 @@ data_sources:
 output:
   slack:
     workspace: streetsmart
-    canvas_channel: "#daily-brief-matsubayashi"  # ←作成必要
+    canvas_channel: "#daily-brief-maji"  # ←作成必要
     dm_to_self: true
 
 review:
-  enabled: true
-  review_until: "2026-05-19"  # 2週間後
-  review_recipients:
-    - U03HXF9ER  # 間地さん
+  enabled: false  # 自分はモニタ側なのでレビューモードOFF
 
 meeting_prep:
   days_ahead: 2

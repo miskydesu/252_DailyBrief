@@ -50,7 +50,7 @@ review:
   enabled: true
   review_until: "2026-05-19"
   review_recipients:
-    - U_MANJI
+    - U03HXF9ER  # 間地さん
 
 meeting_prep:
   days_ahead: 2
