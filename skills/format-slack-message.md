@@ -153,33 +153,53 @@ Canvasを作成した後、本人DMにリンクのみ送信：
 
 ---
 
-## Routine B: meeting-prep の Block Kit 構成（会議1件あたり）
+## Routine B: meeting-prep の出力形式
 
-会議が複数ある場合は **1会議1メッセージ**で連続送信（スレッドではなく独立メッセージ）。
+`output.slack.mode` の値に関わらず、**1日1Canvas**（全会議まとめて）＋ **DM通知1件** で固定。
+
+### Canvas 本体（Markdown）
+
+Canvas タイトル: `🗓 MM/DD MTG準備（YYYY-MM-DD 作成）`
+
+```markdown
+# 🗓 MM/DD のMTG準備
+
+---
+
+## HH:MM 〇〇定例　📅 [カレンダー](link)
+
+### 📝 前回（M/D）の要点
+- 要点1
+- 要点2
+
+### ✋ 持ち越し宿題
+- 担当者: XXX → 状況は？
+- 担当者: YYY → 完了？
+
+### 💡 次回アジェンダ案（たたき台）
+1. 前回宿題の確認
+2. ...
+3. ...
+
+📎 [前回議事録](link)
+
+---
+
+## HH:MM △△MTG　📅 [カレンダー](link)
+
+...（以下同構成）
+```
+
+### DM通知（Block Kit）
 
 ```json
 [
-  {"type": "header", "text": {"type": "plain_text", "text": "🗓 2日後のMTG準備"}},
   {
     "type": "section",
-    "text": {"type": "mrkdwn", "text": "*5/7 14:00 〇〇定例*　📅 <カレンダーURL|カレンダー>"}
-  },
-  {"type": "divider"},
-  {
-    "type": "section",
-    "text": {"type": "mrkdwn", "text": "*📝 前回（4/30）の要点*\n• ...\n• ..."}
-  },
-  {
-    "type": "section",
-    "text": {"type": "mrkdwn", "text": "*✋ 持ち越し宿題*\n• 松林: XXX を確認 → 状況は？\n• 藤田: YYY を作成 → 完了？"}
-  },
-  {
-    "type": "section",
-    "text": {"type": "mrkdwn", "text": "*💡 次回アジェンダ案（たたき台）*\n1. 前回宿題の確認\n2. ...\n3. ..."}
-  },
-  {
-    "type": "context",
-    "elements": [{"type": "mrkdwn", "text": "📎 <議事録URL|前回議事録>"}]
+    "text": {
+      "type": "mrkdwn",
+      "text": "🗓 *MM/DD のMTG準備ができました*\n👉 <canvas_url|🗓 MM/DD MTG準備>\n\n• HH:MM 〇〇定例\n• HH:MM △△MTG"
+    }
   }
 ]
 ```
