@@ -1,0 +1,80 @@
+# Daily Brief ユーザー設定テンプレート
+# 新規ユーザー追加時はこのファイルをコピーして users/{name}.yaml として保存
+
+# === 基本情報 ===
+name: 山田 太郎          # 表示用の氏名
+slack_user_id: U01XXXX  # Slack User ID（DM送信用）
+email: yamada@streetsmart.co.jp
+
+# === タイムゾーン・言語 ===
+timezone: Asia/Tokyo
+language: ja
+
+# === Routine実行時刻 ===
+schedule:
+  daily_report: "22:00"    # JST
+  meeting_prep: "08:00"    # JST
+
+# === カテゴリ定義（順序が出力順序になる） ===
+categories:
+  - name: 戦略
+    emoji: "🎯"
+    description: 経営方針、事業戦略、中長期計画
+  - name: 個人面談
+    emoji: "👥"
+    description: 1on1、評価面談、メンタリング
+  - name: 社内
+    emoji: "🏢"
+    description: 社内定例、部署横断、社内プロジェクト
+  - name: 社外
+    emoji: "🤝"
+    description: クライアント、パートナー、取引先
+  - name: オペレーション
+    emoji: "⚙️"
+    description: 日常業務、運用、定常業務
+
+# === データソース ===
+data_sources:
+  google_calendar:
+    calendar_id: yamada@streetsmart.co.jp
+    # 自分が参加者のイベントのみ対象。"accepted" のもののみ拾う。
+    only_accepted: true
+
+  google_drive:
+    # Meet自動録画・メモが保存されるフォルダ
+    meet_recordings_folder_id: ""  # ←Driveから取得して記入
+    # Claudeリアル会議録音の議事録フォルダ
+    claude_meeting_notes_folder_id: ""
+
+  gmail:
+    enabled: false  # 当日メールも参照する場合 true
+
+# === 出力先 ===
+output:
+  slack:
+    # Canvas を作成するワークスペース
+    workspace: streetsmart
+    # Canvas置き場（個人専用チャンネル推奨）
+    canvas_channel: "#daily-brief-yamada"
+    # DM送信先（通常は自分自身）
+    dm_to_self: true
+
+# === レビューモード（最初の2週間だけ品質モニタを入れる） ===
+review:
+  enabled: true
+  review_until: "2026-05-19"  # この日付までは review_recipients にも送る
+  review_recipients:
+    - U02XXXX  # 例: 間地さん（品質モニタ）
+
+# === Routine B（meeting-prep）の設定 ===
+meeting_prep:
+  # 何日後のミーティングを対象にするか
+  days_ahead: 2
+  # このカテゴリのみ対象にする（空なら全カテゴリ）
+  target_categories:
+    - 戦略
+    - 個人面談
+    - 社内
+    - 社外
+  # 1日に通知する最大件数（多すぎると埋もれる）
+  max_per_day: 5

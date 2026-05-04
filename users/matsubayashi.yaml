@@ -1,0 +1,64 @@
+# 松林さん設定（叩き台）
+# Slack User ID・カレンダーID・DriveフォルダIDは実際の値に置換してください
+
+name: 松林 [姓]
+slack_user_id: U_MATSUBAYASHI  # ←実IDに置換
+email: matsubayashi@streetsmart.co.jp  # ←実メアドに置換
+
+timezone: Asia/Tokyo
+language: ja
+
+schedule:
+  daily_report: "22:00"
+  meeting_prep: "08:00"
+
+# 松林さん明示要望のカテゴリ順
+categories:
+  - name: 戦略
+    emoji: "🎯"
+    description: 経営方針、事業戦略、中長期計画
+  - name: 個人面談
+    emoji: "👥"
+    description: 1on1、評価面談、メンタリング
+  - name: 社内
+    emoji: "🏢"
+    description: 社内定例、部署横断、社内プロジェクト
+  - name: 社外
+    emoji: "🤝"
+    description: クライアント、パートナー、取引先
+  - name: オペレーション
+    emoji: "⚙️"
+    description: 日常業務、運用、定常業務
+
+data_sources:
+  google_calendar:
+    calendar_id: matsubayashi@streetsmart.co.jp  # ←要確認
+    only_accepted: true
+
+  google_drive:
+    meet_recordings_folder_id: ""        # ←Drive から取得
+    claude_meeting_notes_folder_id: ""   # ←Drive から取得
+
+  gmail:
+    enabled: false
+
+output:
+  slack:
+    workspace: streetsmart
+    canvas_channel: "#daily-brief-matsubayashi"  # ←作成必要
+    dm_to_self: true
+
+review:
+  enabled: true
+  review_until: "2026-05-19"  # 2週間後
+  review_recipients:
+    - U_MANJI  # 間地さん ←実IDに置換
+
+meeting_prep:
+  days_ahead: 2
+  target_categories:
+    - 戦略
+    - 個人面談
+    - 社内
+    - 社外
+  max_per_day: 5
