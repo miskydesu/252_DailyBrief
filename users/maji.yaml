@@ -36,7 +36,7 @@ data_sources:
 
   google_drive:
     meet_recordings_folder_id: "1bVqhB3FYwrp_8mlYceYaXX5XwI5yPbAP"
-    claude_meeting_notes_folder_id: ""   # ←Drive から取得
+    claude_meeting_notes_folder_id: "1bVqhB3FYwrp_8mlYceYaXX5XwI5yPbAP"
 
   gmail:
     enabled: false

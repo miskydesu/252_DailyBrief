@@ -41,10 +41,9 @@ data_sources:
     only_accepted: true
 
   google_drive:
-    # Meet自動録画・メモが保存されるフォルダ
-    meet_recordings_folder_id: ""  # ←Driveから取得して記入
-    # Claudeリアル会議録音の議事録フォルダ
-    claude_meeting_notes_folder_id: ""
+    # Meet録画・自動メモ・議事録はすべて同じフォルダに格納される
+    meet_recordings_folder_id: ""         # ←Driveからフォルダを開いてURLのIDを記入
+    claude_meeting_notes_folder_id: ""    # ←通常は meet_recordings_folder_id と同じ値
 
   gmail:
     enabled: false  # 当日メールも参照する場合 true

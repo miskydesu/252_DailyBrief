@@ -24,8 +24,7 @@
 | データ | 取得元 | 用途 |
 |---|---|---|
 | カレンダー予定 | Google Calendar Connector | 今日（00:00-22:00 JST）のイベント一覧 |
-| Meet録画・自動メモ | Google Drive Connector | 各イベントに紐づく録画/Gemini自動メモ |
-| リアル会議録音 | Google Drive Connector | Claudeでの議事録（指定フォルダ） |
+| Meet録画・自動メモ・議事録 | Google Drive Connector | 録画・Geminiメモ・議事録はすべて同じフォルダに格納される |
 | 関連メール | Gmail Connector（オプション） | 当日のミーティング関連メール |
 
 ### 処理フロー
