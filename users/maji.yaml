@@ -44,7 +44,6 @@ data_sources:
 output:
   slack:
     workspace: streetsmart
-    canvas_channel: "#daily-brief-maji"  # ←作成必要
     dm_to_self: true
 
 review:

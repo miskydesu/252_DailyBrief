@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/maji/Desktop/252_DailyBrief status)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git fetch *)",
+      "Bash(tar -tzf /Users/maji/Desktop/252_DailyBrief.tar.gz)",
+      "Read(//private/tmp/**)",
+      "Bash(tar -xzf /Users/maji/Desktop/252_DailyBrief.tar.gz)",
+      "Bash(cp /tmp/252_DailyBrief/CLAUDE.md /Users/maji/Desktop/252_DailyBrief/CLAUDE.md)",
+      "Bash(cp /tmp/252_DailyBrief/README.md /Users/maji/Desktop/252_DailyBrief/README.md)",
+      "Bash(cp /tmp/252_DailyBrief/skills/* /Users/maji/Desktop/252_DailyBrief/skills/)",
+      "Bash(cp /tmp/252_DailyBrief/users/* /Users/maji/Desktop/252_DailyBrief/users/)",
+      "Bash(cp /tmp/252_DailyBrief/docs/* /Users/maji/Desktop/252_DailyBrief/docs/)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
+    ]
+  }
+}

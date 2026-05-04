@@ -43,7 +43,6 @@ data_sources:
 output:
   slack:
     workspace: streetsmart
-    canvas_channel: "#daily-brief-nakagawa"
     dm_to_self: true
 
 review:

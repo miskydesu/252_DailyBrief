@@ -51,12 +51,8 @@ data_sources:
 # === 出力先 ===
 output:
   slack:
-    # Canvas を作成するワークスペース
     workspace: streetsmart
-    # Canvas置き場（個人専用チャンネル推奨）
-    canvas_channel: "#daily-brief-yamada"
-    # DM送信先（通常は自分自身）
-    dm_to_self: true
+    dm_to_self: true  # Block Kit でDMに直送（Canvas不使用）
 
 # === レビューモード（最初の2週間だけ品質モニタを入れる） ===
 review:
