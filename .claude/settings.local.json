@@ -15,7 +15,10 @@
       "Bash(cp /tmp/252_DailyBrief/docs/* /Users/maji/Desktop/252_DailyBrief/docs/)",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "mcp__7674fbbc-da97-464a-8721-8979e132cf0c__search_files",
+      "mcp__3bbf2a60-c24e-4151-b131-b0ff13f91392__slack_send_message",
+      "mcp__caa577bb-c1d1-4082-8969-e9e0a92a401d__list_events"
     ]
   }
 }

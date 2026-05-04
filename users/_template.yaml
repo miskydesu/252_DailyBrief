@@ -52,7 +52,10 @@ data_sources:
 output:
   slack:
     workspace: streetsmart
-    dm_to_self: true  # Block Kit でDMに直送（Canvas不使用）
+    mode: dm          # dm: Block KitでDMに直送 / canvas: プライベートチャンネルにCanvas作成+DM通知
+    # mode: canvas の場合は以下を有効化（プライベートチャンネル必須）
+    # canvas_channel: "#daily-brief-yamada"
+    dm_to_self: true
 
 # === レビューモード（最初の2週間だけ品質モニタを入れる） ===
 review:

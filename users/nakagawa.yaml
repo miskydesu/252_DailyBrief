@@ -43,6 +43,9 @@ data_sources:
 output:
   slack:
     workspace: streetsmart
+    mode: dm  # dm or canvas
+    # mode: canvas の場合は以下を有効化
+    # canvas_channel: "#daily-brief-nakagawa"  # プライベートチャンネル必須
     dm_to_self: true
 
 review:
